@@ -1,7 +1,7 @@
 
 ** WXJson is a micro service providing JSON data from Wires-X **
     
-    - almost not templated, easily editable
+    - almost not hard templated, easily editable
 
     cd /opt
     git clone https://github.com/Avrahqedivra/WXJson.git
