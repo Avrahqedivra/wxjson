@@ -400,23 +400,6 @@ thead {
   text-align: left;
   padding-left: 1rem;
 }
-
-/* #hbtables {
-  scrollbar-width: thin;
-  display: block;
-  overflow-y: scroll;                
-}
-#hbtables::-webkit-scrollbar
-{
-  display: block;
-  width: 6px;
-  background-color: var(--color-darkbg);
-}
-#hbtables::-webkit-scrollbar-thumb
-{
-  background-color: #569cd6;
-} */
-
 .lastheard {
   font-weight: var(--color-fw-lastheard);
 }

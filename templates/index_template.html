@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="mysite_template.css">
     <meta name="description" content="Copyright (c) 2022 Jean-Michel Cohen - F4JDN" />
 
-    <style>        
+    <style>
 			.tables, #tbtraffic {
 					margin-top: 0;
+					/* position: relative; */
 			}
 	
 			#insertPoint {
@@ -32,6 +33,20 @@
 			#insertPoint::-webkit-scrollbar-thumb {
 					background-color: #569cd6;
 			}
+
+			/* .headerRow th {
+				background-color: var(--color-bg-headerRow);
+				position: sticky;
+  			top: 0;
+			} */
+
+			@supports (-moz-appearance:none) {
+			div[name="hbtables"] { 
+					overflow-y: scroll;
+					width: fit-content;
+					margin-top: 0.5rem;
+				}
+			}			
 	</style>
 </head>
 
