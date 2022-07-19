@@ -1,0 +1,1110 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/publicsans/v7/ijwGs572Xtc6ZYQws9YVwllKVG8qX1oyOymuFpmJygcob18.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/publicsans/v7/ijwGs572Xtc6ZYQws9YVwllKVG8qX1oyOymuFpmJxAco.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+a::-webkit-scrollbar, select::-webkit-scrollbar {
+  display: none;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+html, body {
+  font-size: var(--color-fz-html);
+  font-family: var(--color-font-html);
+  background-color: var(--color-page);
+  width:100%;
+  height:100%;
+  margin: 0;
+  font-weight: bold;
+}
+
+/*Tabs*/
+#tabs {
+  border-radius: var(--app-border-radius);
+  overflow: hidden;
+  /*border: 0.5px solid var(--color-table-border);*/
+  background-color: var(--color-page);
+}
+
+/*Head area*/
+#tabs .head {
+    display: inline-block;
+    width: 100%;
+    border-radius: var(--app-border-radius);
+    /*border-bottom: 0.5px solid var(--color-table-border);*/
+}
+
+#tabs .head ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#tabs .head li {
+    float: left;
+    border: none;
+    cursor: pointer;
+    padding: 4px 20px 0 20px;
+    transition: 0.3s;
+    font-size: 17px;
+    color: var(--color-light);
+}
+#tabs li:hover {
+    background-color: var(--color-dropdown-hover);
+}
+/*Head area active tab*/
+#tabs li.active {
+    background-color: var(--color-bg-headerRow);
+}
+/*Content area*/
+#tabs .content > div {
+  display: none;
+  /*padding: 6px 12px;*/
+  color: var(--color-light);
+}
+#tabs .tables {
+  margin-top: 0;
+}
+/*Content area active tab*/
+#tabs .content > div.active {
+    display: block;
+}
+#tabs .content {
+  max-height: 43rem;
+  scrollbar-width: thin;
+  overflow-y: auto;
+}
+.content thead {
+  top: 0;
+  position: sticky;
+}
+.content::-webkit-scrollbar, select::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+  background-color: #404040;
+}
+.content::-webkit-scrollbar-thumb, select::-webkit-scrollbar-thumb {
+  background-color: #569cd6;
+}
+.content thead th {
+  top: 0;
+  position: sticky;
+}
+/*End*/
+/***************************************************************/
+#footer {
+  margin-top: 2rem;
+  color:var(--color-footer);
+  font-size: 0.8rem; 
+  font-weight:normal; 
+  text-align: center;
+}
+a:link, .alink {
+  color: var(--color-alink);
+  text-decoration: none;
+  cursor: pointer;
+}
+/* visited link */
+a:visited {
+  color: var(--color-avisited);
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover, .alink:hover {
+  color: var(--color-ahover);
+  text-decoration: underline;
+}
+/* selected link */
+a:active, .alink:active {
+  color: var(--color-aactive);
+  text-decoration: none;
+}
+.tooltip {
+  position: relative;
+  opacity: 1;
+  display: inline-block;
+  border-bottom: 1px dotted var(--color-tooltip-fg);
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 18rem;
+  background-color: var(--color-tooltip-bg);
+  color: var(--color-tooltip-fg);
+  text-align: left;
+  border-radius: var(--app-border-radius);
+  padding: 8px 0;
+  left: 25%;
+  top: 100%;
+  opacity: 1;
+/* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  right: 100%;
+  visibility: visible;
+}
+.dropdown:hover .dropbtn {
+  background-color: var(--color-dropdown-hover);
+  color: var(--color-light);
+}
+
+.dropbtn {
+  font-size: 1rem;
+  background-color: var(--color-dropdown-btn);
+  border: none;
+  color: var(--color-light);
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: var(--app-border-radius);
+}
+
+/* The container 
+  <div>
+  - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  font-size: 1rem;
+  font-weight: normal;
+  display: none;
+  position: absolute;
+  background-color: var(--color-dropdown-content);
+  width: max-content;
+  z-index: 750;
+  border: .5px solid var(--color-table-border);
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #000000;
+  padding: 6px 16px;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+table, td, th {
+  font-weight: var(--color-fw-table);
+  border: .5px solid var(--color-table-border);
+  padding: 1px;
+  border-collapse: collapse;
+  text-align: center;
+}
+tr {
+  background-color:var(--color-trbg);
+}
+thead {
+  font-size: 1.1rem;
+}			 
+::selection {
+  background-color: #C3CFE2;
+}
+.tablefixed {
+  table-layout: fixed;
+}
+.tables {
+  margin-top: 1rem;
+  width: var(--table-width);
+}
+.headerRow {
+  background-color: var(--color-bg-headerRow);
+  color: var(--color-fg-headerRow);
+  height: 15px;
+  cursor: pointer;
+}
+.tgBlue {
+  color: var(--color-tgBlue);
+}
+.tgGreen {
+  color: var(--color-tgGreen);
+}
+.tgLtGreen {
+  color: var(--color-tgLtGreen);
+}            
+.tgRed {
+  color: var(--color-tgRed);
+}
+.tgYellow {
+  color: var(--color-tgYellow);
+}
+.tgPurple {
+  color: var(--color-tgPurple);
+}
+.tgOrange {
+  color: var(--color-tgOrange);
+}
+.tgWhite {
+  color: var(--color-tgWhite);
+}
+.tgPink {
+  color: var(--color-tgPink);
+}
+
+.tgtable {
+  margin-top: 2rem;  
+}
+
+/*
+  LASTHEARD STYLE CLASSES
+*/
+.thleorder {
+  width: 2rem;
+}
+.thlename { 
+  width: 6rem;
+}
+.thletg {
+  font-weight: normal;
+  width: 7em;
+}
+.thledate { 
+  width: 4rem;
+}
+.thletime { 
+  width: 3rem;
+}
+.thleslot { 
+  width: 2rem;
+}
+.thlelocation { 
+  width: 9rem;
+}
+.thlemap { 
+  width: 3rem;
+}
+.thleqrz { 
+  width: 3rem;
+}
+.thlelog { 
+  width: 18rem;
+}
+.thledelay { 
+  width: 4rem;
+}
+.thlenetid { 
+  width: 7rem;
+}
+.thlemaster { 
+  width: 11rem;
+}
+
+/* USERS CLASSES */
+.thusindex {
+  width: auto;
+}
+.thusfname {
+  width: 8rem;
+}
+.thusname {
+  width: 8rem;
+}
+.thussurname {
+  width: 8rem;
+}
+.thuscity {
+  width: 10rem;
+}
+.thusstate {
+  width: 8rem;
+}
+.thuscountry {
+  width: 8rem;
+}
+.thuscall {
+  width: 4rem;
+}
+.thusid {
+  width: 6rem;
+}
+.thusrem {
+  width: 8rem;
+}
+
+.tdusindex {
+  padding: 0 0.5 0 0.5rem;
+}
+.tdusfname {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tdusname {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tdussurname {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tduscity {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tdusstate {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tduscountry {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tduscall {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tdusradioid {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tdusid {
+  text-align: left;
+  padding-left: 1rem;
+}
+.tdusrem {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+/* #hbtables {
+  scrollbar-width: thin;
+  display: block;
+  overflow-y: scroll;                
+}
+#hbtables::-webkit-scrollbar
+{
+  display: block;
+  width: 6px;
+  background-color: var(--color-darkbg);
+}
+#hbtables::-webkit-scrollbar-thumb
+{
+  background-color: #569cd6;
+} */
+
+.lastheard {
+  font-weight: var(--color-fw-lastheard);
+}
+.firstname {
+  text-align: left;
+  padding-left: 0.5rem;
+  color: var(--color-firstname);
+}
+.talkgroup {
+  color: var(--color-talkgroup);
+}
+
+.alias {
+  color: var(--color-alias);
+  text-align: left;
+  padding-left: 1.5rem;
+}            
+.callsign {
+  text-align: left;
+  padding-left: 0.15rem;
+  vertical-align:middle;
+}
+.callsign a {
+  color: var(--color-callsign-a);
+}
+.callsign a:hover {
+  color: var(--color-callsign-a-hover);
+  text-decoration: underline;
+}
+.dmrid {
+  font-weight: var(--color-fw-dmrid);
+  color: var(--color-dmrid);
+  text-align: end;
+  padding-right: 0.5rem;
+}
+.delay {
+  font-weight: var(--color-fw-delay);
+}
+.online {
+  color: var(--color-online);
+}
+.connected {
+  color: var(--color-connected);
+}
+.disconnected {
+  color: var(--color-disconnected);
+}
+.netid {
+  text-align: right;
+  padding-right: 1rem;
+  font-weight: var(--color-fw-netid);
+}
+.infra {
+  text-align: left;
+  padding-left: 1rem;
+  font-weight: var(--color-fw-infra);
+}
+
+.message a:hover {
+  color: var(--color-message-a-hover) !important;
+  text-decoration: underline;
+}
+
+/*
+  OPENBRIDGES STYLE CLASSES
+*/
+.thopmaster { 
+  width: 12rem;
+}
+.thopnetid { 
+  width: 11rem;
+}
+.thopcalls { 
+  width: 58rem;
+}
+.obName {
+color: #569cd6;
+  text-align: left;
+  padding-left: 1rem;
+}
+.obNetID {
+  color: var(--color-fg-obnetid);
+  font-weight: var(--color-fw-obnetid);
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+/*
+  MASTERS STYLE CLASSES
+*/
+.thmsmaster { 
+  width: 12rem;
+}
+.thmsnetid { 
+  width: 12rem;
+}
+.thmstime { 
+  width: 7rem;
+}
+.thmsslot { 
+  width: 3rem;
+}
+.thmstx { 
+  width: 25rem;
+}
+.thmsdest { 
+  width: auto;
+}
+.msMasters {
+  color: #569cd6;
+  font-weight: var(--color-fw-msmasters);
+}
+.msCallsign {
+  color: var(--color-fg-mscallsign);
+  font-weight: var(--color-fw-mscallsign);
+  /* border-bottom: 1px dotted #000000; */
+  display: inline-block;
+}
+.msRepeat {
+  font-size: 0.7rem;
+  color: var(--color-msRepeat);
+  font-weight: var(--color-fw-msrepeat);
+}
+.msLocation {
+  font-size: 0.85rem;
+  font-weight: var(--color-fw-mslocation);
+  color: #569cd6;
+}
+.msNetID {
+  color: var(--color-msNetID);
+  font-size: 0.8rem;
+}
+.msTS {
+  font-size: 0.9rem;
+  color: var(--color-fg-msTS);
+  background-color: var(--color-bg-msTS);
+}
+.msTSE {
+  font-size: 0.9rem;
+  color: var(--color-fg-msTSE);
+  background-color: var(--color-bg-msTSE);
+}
+.msTS1 {
+  font-size: 0.9rem;
+  color: var(--color-fg-msTS1);
+  background-color: var(--color-bg-msTS1);
+}
+.msTS2 {
+  font-size: 0.9rem;
+  color: var(--color-fg-msTS2);
+  background-color: var(--color-bg-msTS2);
+}
+.msTSTX {
+  font-size: 0.9rem;
+  color: var(--color-fg-msTSTX);
+}
+.msTSRX {
+  font-size: 0.9rem;  
+  color: var(--color-fg-msTSRX);
+}
+
+/* PEERS STYLE CLASSES */
+.thpemaster { 
+  width: 12rem;
+}
+.thpenetid { 
+  width: 12rem;
+}
+.thpetime { 
+  width: 7rem;
+}
+.thpeslot { 
+  width: 3rem;
+}
+.thpetx { 
+  width: 25rem;
+}
+.thpedest { 
+  width: auto;
+}
+.peON {
+  background-color:#b5cea8;
+}
+.peOFF {
+  background-color:#FF69B4;
+}
+.tdGradient {
+  color: var(--color-fg-tdgradient);
+  background-color: var(--color-bg-tdgradient);
+  font-size: 0.9rem;
+}
+
+.infoline {
+  color: var(--color-fg-infoline);
+}
+
+#marquee {
+  color: var(--color-fg-marquee);
+}
+
+.map-tiles {
+  filter: var(--map-tiles-filter);
+}
+
+/* modal */
+/* The Modal (background) */
+.modal {  
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+
+  scrollbar-width: thin;
+}
+
+.modal-content-followup::-webkit-scrollbar, 
+  .modal-content-listeners::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+    background-color: #404040;
+}
+
+.modal-content-followup::-webkit-scrollbar-thumb, 
+  .modal-content-listeners::-webkit-scrollbar-thumb {
+    background-color: #569cd6;
+}
+
+/* Modal Content */
+.modal-content-listeners {
+  scrollbar-width: thin;
+  
+  width: 40rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20rem;
+  transform: translateY(-50%);
+
+  max-height: 60rem;
+  overflow-y: auto;
+}
+
+.modal-content-followup {
+  scrollbar-width: thin;
+
+  width: 50rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  margin-left: -30rem;
+  transform: translateY(-50%);
+
+  max-height: 60rem;
+  overflow-y: auto;
+}
+
+.tgflag {
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
+  margin-left: 0.50rem;
+  width: 18px;
+  height: 13px;
+  border: 1px solid #606060;
+}
+
+/* The Close Button */
+.close {
+  position:absolute;
+  color: var(--color-close);
+  top: -0.5rem;
+  right: 4px;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.close:hover, .close:focus {
+  color: var(--color-close);
+  text-decoration: none;
+  cursor: default;
+}
+
+.close-followup {
+  top: -8px;
+}
+
+.xclose-listeners {
+  top: 5px;
+}
+
+.darker {
+  filter: saturate(0.4)
+}
+
+.thlscallsign {
+  width: 10rem;
+}
+
+.thlsip {
+  width: 10rem;
+}
+
+.thlsport {
+  width: 10rem;
+}
+
+.thlsnetid {
+  width: 10rem;
+}
+
+.trlisteners {
+  color: var(--color-fg-marquee);  
+}
+
+.trfuname {
+  width: 10rem;
+}
+
+.trfudate {
+  width: 10rem;
+}
+
+.trfutime {
+  width: 10rem;
+}
+
+.trfutg {
+  width: 10rem;
+}
+
+.trfualias {
+  width: 10rem;
+}
+
+.trfudelay {
+  width: 10rem;
+}
+
+/*
+  BRIDGES
+*/
+select {
+  width:100%;
+  text-align: center;
+  color: var(--color-table-fg);
+  background: var(--color-trbg);
+  border: 0;
+}
+.bridges {
+  color: var(--color-table-fg);
+}
+.thbrsystem { 
+  font-weight: normal;
+  width:13rem ;
+}
+.thbrdate { 
+    width:10rem ;
+}
+.thbrslot { 
+  width:2rem;
+}
+.thbrtg { 
+  width:4rem;
+}
+.thlbrstatus { 
+  width:8rem;
+}
+.thbrtimeout { 
+  width:8rem;
+}
+.thbraction { 
+  width:10rem;
+}
+.thbrcnx { 
+  width:13rem;
+}
+.thbrdiscnx { 
+  width:13rem;
+}
+
+.lastActive {
+  display: hidden;
+}
+
+.lastActiveTG {
+  font-weight: normal;
+  background-color: var(--color-lastActiveTG);
+}
+
+.emaster {
+  filter: var(--color-filter-emaster)
+}
+
+/* <div class="bullet bulletLastActiveTG">&#x2022;</div>
+.bulletLastActiveTG {
+  float: left;
+  color: var(--color-lastActiveTG);
+  background-color: var(--color-lastActiveTG);
+  border: 0.1875em solid var(--color-lastActiveTG);
+  border-radius: 50%;
+  height: 0.7rem;
+  width: 0.7rem;
+  margin: 0.1rem 0 0 0.1rem;
+}
+*/
+
+/* end modal */
+
+.theme-light {
+  /* html, body */
+  --table-width: 85rem;
+  --color-fz-html: 10pt;
+  --color-font-html: -apple-system,BlinkMacSystemFont,calibri,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+  /* h1 */  
+  --color-fg-h1: #1e1e1e;
+
+  /* map */
+  --map-tiles-filter: none;
+  --normal-fillcolor: green;
+  --normal-fillopacity: 0.1;
+
+  /* generic */
+  --color-page: #cecece;
+  --color-footer: #8e8e8e;
+  --color-fg-marquee: #404040;
+
+  --color-darkbg:#ffffff;
+  --color-light:#404040;
+
+  /* a */
+  --color-alink: #004bbb;
+  --color-avisited: #004bbb;
+  --color-ahover: hotpink;
+  --color-aactive: #004bbb;
+
+  /* tooltip */
+  --color-tooltip-bg: #827777;
+  --color-tooltip-fg: #000000;
+
+  /* dropdown */
+  --color-dropdown-hover: #525252;
+  --color-dropdown-btn: #356244;
+  --color-dropdown-content: #f1f1f1;
+
+  /* table */
+  --color-fw-table: normal;
+  --color-table-fg: #000000;
+  --color-table-border: #b0b0b0;
+  --color-trbg: #f0f0f0;
+  --color-bg-headerRow: #5ea6f8;
+  --color-fg-headerRow: #ffffff;
+
+  --color-firstname: #004bbb;
+  --color-talkgroup: #3974a5;
+  --color-alias: #478d22;
+  --color-callsign:#ce9178;
+  --color-callsign-a:#9b593f;
+  --color-callsign-a-hover: hotpink;
+
+  --color-dmrid: #3f3f3f;
+  --color-online: #e52713;
+
+  --color-connected: #478d22;
+  --color-disconnected:#e52713;
+
+  --color-fw-delay: normal;
+  --color-message: #569cd6;
+  --color-message-a-hover: #FF69B4;
+
+  --color-fg-infoline:#404040;
+
+  --color-tgBlue: #585848;
+  --color-tgGreen: #585848;
+  --color-tgLtGreen: #000;
+  --color-tgRed: #fba392;
+  --color-tgYellow: #585848;
+  --color-tgPurple: #c586c0;
+  --color-tgOrange: #ce9178;
+  --color-tgWhite: #1e1e1e;
+  --color-tgPink: #EBC6FD;
+
+  /* map */
+  --color-map-fill: #fefefe;
+  --color-map-stroke: #505050;
+
+  /* */
+  --color-msNetID: #000000; 
+  --color-msRepeat: #000000;
+
+  --color-fg-msTS: #1e1e1e;
+  --color-bg-msTS: #fefefe;
+
+  --color-fg-msTSE: #569cd6;
+  --color-bg-msTSE: #fefefe;
+  
+  --color-fg-msTS1: #c247b8;
+  --color-bg-msTS1: #fefefe;
+
+  --color-fg-msTS2: #569cd6;
+  --color-bg-msTS2: #fefefe;
+
+  --color-fg-msTSTX: #f57f68;
+  --color-fg-msTSRX: #3fcc26;
+
+  --color-fg-mscallsign: #be3a1f;
+  --color-fw-mscallsign: normal;
+
+  --color-fg-tdgradient: #fefefe;
+  --color-bg-tdgradient: #928888;
+
+  --color-fg-obnetid: #be3a1f;  
+  --color-fw-obnetid: normal;
+
+  --color-bg-map: #e0e0e0;
+
+  --color-bg-callerinfo: #6e6e6e;
+
+  --color-fg-log: #1e1e1e;
+  --color-bg-even: #cbe3ff;
+  --color-bg-odd: #ffffff;
+
+  --app-border-radius: 2px;
+
+  --color-bg-select: #fdfdfd;
+  --color-scrollbartrack: #f0f0f0;
+  --color-scrollbarthumb: #569cd6;
+  --color-bg-overlay: rgba(0, 0, 0, 0.3); 
+
+  --color-fw-lastheard: normal;
+  --color-fw-dmrid: normal;
+  --color-fw-netid: normal;
+  --color-fw-infra: normal;
+  --color-fw-msmasters: normal;
+  --color-fw-msrepeat: normal;
+  --color-fw-mslocation: normal;
+
+  --color-lastActiveTG: #5aeb0d;
+
+  --color-button-disabled: #A0A0A0;
+  --color-filter-darker: 0.95;
+
+  --color-close: #ffffff;
+  --color-filter-emaster: 0.80;
+}
+
+.theme-dark {
+  /* html, body */
+  --table-width: 85rem;
+  --color-fz-html: 10pt;
+  --color-font-html: -apple-system,BlinkMacSystemFont,calibri,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+  /* h1 */
+  --color-fg-h1: #fefefe;
+
+  /* map */
+  --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  --normal-fillcolor: black;
+  --normal-fillopacity: 0.15;
+
+  /* generic */
+  --color-page: #1e1e1e;
+  --color-footer: #8E8E8E;
+  --color-fg-marquee: #B1B1B1;
+
+  --color-darkbg:#404040;
+  --color-light:#ffffff;
+
+  /* a */
+  --color-alink: #569cd6;
+  --color-avisited: #569cd6;
+  --color-ahover: hotpink;
+  --color-aactive: #569cd6;
+
+  /* tooltip */
+  --color-tooltip-bg: #4e4e4e;
+  --color-tooltip-fg: #ffffff;
+
+  /* dropdown */
+  --color-dropdown-hover: #525252;
+  --color-dropdown-btn: #356244;
+  --color-dropdown-content: #a1a1a1;
+
+  /* table */
+  --color-fw-table: normal;
+  --color-table-fg: #ffffff;
+  --color-table-border: #404040;
+  --color-trbg: #1e1e1e;
+  --color-bg-headerRow: #37373d;
+  --color-fg-headerRow: #ffffff;
+
+  --color-firstname: #569cd6;
+  --color-talkgroup: #569cd6;
+  --color-alias: #b5cea8;
+  --color-callsign:#ce9178;
+  --color-callsign-a:#9b593f;
+  --color-callsign-a-hover: hotpink;
+
+  --color-dmrid: #fefefe;
+  --color-online: #be3a1f;
+  
+  --color-connected: #478d22;
+  --color-disconnected:#e52713;
+
+  --color-fw-delay: normal;
+  --color-message: #569cd6;
+  --color-message-a-hover: #FF69B4;
+
+  --color-fg-infoline:#cccccc;
+
+  --color-tgBlue: #D2E5FB;
+  --color-tgGreen: #DCDCAA;
+  --color-tgLtGreen: #b5cea8;
+  --color-tgRed: #fba392;
+  --color-tgYellow: #EBFDC6;
+  --color-tgPurple: #c586c0;
+  --color-tgOrange: #ce9178;
+  --color-tgWhite: #ffffff;
+  --color-tgPink: #EBC6FD;
+
+  /* map */
+  --color-map-fill: #2e2e2e;
+  --color-map-stroke: #505050;
+
+  /* */
+  --color-msNetID: #fefefe; 
+  --color-msRepeat: #fefefe;
+
+  --color-fg-msTS: #fefefe;
+  --color-bg-msTS: #1e1e1e;
+
+  --color-fg-msTSE: #569cd6;
+  --color-bg-msTSE: #1e1e1e;
+
+  --color-fg-msTS1: #c586c0;
+  --color-bg-msTS1: #1e1e1e;
+
+  --color-fg-msTS2: #569cd6;
+  --color-bg-msTS2: #1e1e1e;
+
+  --color-fg-msTSTX: #fba392;
+  --color-fg-msTSRX: #CEFDC6;
+
+  --color-fg-mscallsign: #fba392;
+  --color-fw-mscallsign: normal;
+
+  --color-fg-tdgradient: #fefefe;
+  --color-bg-tdgradient: #2e2e2e;
+
+  --color-fg-obnetid: #fba392;  
+  --color-fw-obnetid: normal;
+
+  --color-bg-map: #222222;  
+
+  --color-bg-callerinfo: #4e4e4e;
+
+  --color-fg-log: #fefefe;
+  --color-bg-even: #3d3d3d;
+  --color-bg-odd: #505050;
+
+  --app-border-radius: 2px;
+
+  --color-bg-select: #222222;
+  --color-scrollbartrack: #404040;
+  --color-scrollbarthumb: #569cd6;
+  --color-bg-overlay: rgba(255, 255, 255, 0.1);
+
+  --color-fw-lastheard: normal;
+  --color-fw-dmrid: normal;
+  --color-fw-netid: normal;
+  --color-fw-infra: normal;
+  --color-fw-msmasters: normal;
+  --color-fw-msrepeat: normal;
+  --color-fw-mslocation: normal;
+
+  --color-lastActiveTG: #A70000;
+
+  --color-button-disabled: #000047;
+
+  --color-filter-darker: 0.95;
+  --color-close: #ffffff;
+
+  --color-filter-emaster: 1.20;
+}

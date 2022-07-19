@@ -1,0 +1,9 @@
+*.pyc
+config.py
+*.csv
+.DS_Store
+*.log
+log/*.json
+/*.json
+logo/*.*
+*.bak

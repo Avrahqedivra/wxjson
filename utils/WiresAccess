@@ -1,0 +1,5 @@
+#!/bin/bash
+mv /opt/WXJson/log/WiresAccess.log /opt/HBJson/log/WiresAccess.log.save
+/usr/bin/tail -150 /opt/WXJson/log/WiresAccess.log.save > /opt/WXJson/log/WiresAccess.log
+mv /opt/WXJson/log/WiresAccess.log /opt/WXjson/log/WiresAccess.log.save
+/usr/bin/tail -150 /opt/WXJson/log/WiresAccess.log.save > /opt/WXJson/log/WiresAccess.log
