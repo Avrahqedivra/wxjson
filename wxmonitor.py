@@ -529,7 +529,7 @@ if __name__ == '__main__':
 
     logging.info('wxmonitor.py starting up')
 
-    logger.info('\n\n\tWXJSON v1.0.0:\n\tCopyright (c) 2022 Jean-Michel Cohen, F4JDN <f4jdn@outlook.fr>\n\n')
+    logger.info('\n\n\tWXJSON v1.1.0:\n\tCopyright (c) 2022 Jean-Michel Cohen, F4JDN <f4jdn@outlook.fr>\n\n')
 
     # Check WiresAccess.log file
     # if os.path.isfile(LOG_PATH+"WiresAccess.log"):
@@ -539,7 +539,7 @@ if __name__ == '__main__':
     #   except CalledProcessError as err:
     #      print(err)
 
-    WATCH_FILE = LOG_PATH + "WiresAccess.log"
+    WATCH_FILE = WXLOG_FILE
     # watcher = Watcher(watch_file)  # simple
     watcher = Watcher(WATCH_FILE, fileHasChanged, text='updating json')  # also call custom action function
     

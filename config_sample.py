@@ -39,3 +39,6 @@ FILE_RELOAD     = 1                              # Number of days before we relo
 # Settings for log files
 LOG_PATH        = './log/'                       # MUST END IN '/'
 LOG_NAME        = 'wxmon.log'
+
+# Settings for wxlog files
+WXLOG_FILE      = './log/WiresAccess.log'
