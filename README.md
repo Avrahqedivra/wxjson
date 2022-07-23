@@ -5,7 +5,7 @@
 
     cd /opt
     git clone https://github.com/Avrahqedivra/WXJson.git
-    cd HBJson
+    cd WXJson
     
     edit config.py to match your needs
 
