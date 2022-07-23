@@ -15,22 +15,30 @@
 					margin-top: 0;
 					/* position: relative; */
 			}
-	
+
+			#insertPoint1 {
+					margin-top: 2rem;
+					width: fit-content;
+					scrollbar-width: thin;
+					height: 20.2rem;
+					overflow-y: overlay;
+			}
+
 			#insertPoint {
 					margin-top: 2rem;
 					width: var(--table-width);
 					scrollbar-width: thin;
-					height: calc(100vh - 31.5rem);
+					height: calc(100vh - 48.6rem);
 					overflow-y: overlay;
 			}
 	
-			#insertPoint::-webkit-scrollbar {
+			#insertPoint::-webkit-scrollbar, #insertPoint1::-webkit-scrollbar {
 					display: block;
 					width: 6px;
 					background-color: #404040;
 			}
 	
-			#insertPoint::-webkit-scrollbar-thumb {
+			#insertPoint::-webkit-scrollbar-thumb, #insertPoint1::-webkit-scrollbar-thumb {
 					background-color: #569cd6;
 			}
 
@@ -41,9 +49,14 @@
 			} */
 
 			@supports (-moz-appearance:none) {
-			div[name="hbtables"] { 
-					overflow-y: scroll;
-					width: fit-content;
+			#insertPoint1, #insertPoint {
+				scrollbar-color: #569cd6;
+				overflow-y: scroll;
+				width: fit-content;
+			}
+
+			div[name="hbtables"] {
+					overflow-y: clip;
 					margin-top: 0.5rem;
 				}
 			}			
@@ -64,6 +77,28 @@
 			</div>
 
 			<div name="hbtables">
+
+				<div id="insertPoint1">
+					<table class="tables tablefixed network" id="tbnodes">
+					<thead id="theadNodes" tbodyid="nodes">
+						<tr class="headerRow">
+							<th class="thleorder">#</th>
+							<th class="thlename">Callsign</th>
+							<th class="thletg">From / Serial TX-ID</th>
+							<th class="thledate">Date</th>
+							<th class="thletime">Heure</th>
+							<th class="thleslot">Port</th>
+							<th class="thlelocation">Location / GPS</th>
+							<th class="thlemap">Map</th>
+							<th class="thleqrz">QRZ.COM</th>
+						</tr>
+					</thead>
+					<tbody id="bodyNodes"></tbody>
+				</table>
+			</div>
+
+			<br>
+
 				<div id="insertPoint">
 					<table class="tables tablefixed network" id="tbtraffic">
 						<thead id="theadTraffic" tbodyid="traffic">
@@ -166,7 +201,10 @@
 						content += "<td class='qrz'><a target='_blank' href='https://www.qrz.com/db/" + callsign + "'>QRZ" + "</a></td>";
 					content += "</tr>";
 
-					$("#hblink").append(content);
+					if (device == "NODE")
+						$("#bodyNodes").append(content);
+					else
+						$("#hblink").append(content);
 				}
 			}
 		}
