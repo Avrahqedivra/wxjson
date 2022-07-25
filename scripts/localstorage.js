@@ -36,7 +36,8 @@ wxDevices = {
     "HA": "FT-3207",
     "HF": "FTM-7250",
     "H5": "FT70D",
-    "R0": "Repeater DR-1/DR-1X"
+    "R0": "Repeater DR-1/DR-1X",
+		"R5": "Repeater DR-2X"
 };
 
 function getwxDevice(str) {
