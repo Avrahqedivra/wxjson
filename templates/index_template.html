@@ -134,6 +134,25 @@
 	listenerList = [];
 	roomhilite = new Set("<<<TGID_HILITE>>>".split(','));
 
+	//  https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array
+	// 	traffic = uniqByKeepLast(traffic, rec => rec.CALLSIGN);
+
+	function uniqByKeepFirst(a, key) {
+		let seen = new Set();
+		return a.filter(item => {
+			let k = key(item);
+			return seen.has(k) ? false : seen.add(k);
+		});
+	}
+
+	function uniqByKeepLast(a, key) {
+		return [
+			...new Map(
+				a.map(x => [key(x), x])
+			).values()
+		]
+	}
+
 	function doTraffic(t) {
 		if (t != null) {
 			if (Array.isArray(t))
@@ -193,7 +212,7 @@
 					content += "<td class='tdDate'>" + record.DATE + "</td>";
 					content += "<td class='tdTime'>" +record.TIME + "</td>";
 					content += "<td class='slot'>" + record.PORT + "</td>";
-					content += "<td class='callsign'>" + mapdisplay + "</td>";
+					content += "<td class='location'>" + mapdisplay + "</td>";
 					if (location.length > 0)
 						content += "<td class='map'><a target='_blank' href='https://www.google.com/maps/place/" + maprequest + "'>Map" + "</a></td>";
 					else
@@ -201,8 +220,11 @@
 						content += "<td class='qrz'><a target='_blank' href='https://www.qrz.com/db/" + callsign + "'>QRZ" + "</a></td>";
 					content += "</tr>";
 
-					if (device == "NODE")
-						$("#bodyNodes").append(content);
+					if (device == "NODE") {
+						// do not add node if already there (keeps the last one)
+						if ($("#bodyNodes td.callsign").text().indexOf(callsign) == -1)
+							$("#bodyNodes").append(content);
+					}
 					else
 						$("#hblink").append(content);
 				}
