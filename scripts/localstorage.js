@@ -25,7 +25,7 @@ wxDevices = {
     "E0": "FT1DR/FT1XD",
     "E5": "FT2D",
     "EA": "FT3D",
-		"EB": "FT4D",
+		"EB": "FT5D",
     "EF": "FT5D",
     "F0": "FTM-400DR/FTM-400XDR",
     "F5": "FTM-100DR",
