@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #
 ###############################################################################
-#   Copyright (C) 2022 Jean-Michel Cohen, F4JDN <f4jdn@outlook.fr>
+#   Copyright (C) 2022-24 Jean-Michel Cohen, F4JDN <f4jdn@outlook.fr>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -529,7 +529,7 @@ if __name__ == '__main__':
 
     logging.info('wxmonitor.py starting up')
 
-    logger.info('\n\n\tWXJSON v1.1.0:\n\tCopyright (c) 2022 Jean-Michel Cohen, F4JDN <f4jdn@outlook.fr>\n\n')
+    logger.info('\n\n\tWXJSON v1.1.0:\n\tCopyright (c) 2022-24 Jean-Michel Cohen, F4JDN <f4jdn@outlook.fr>\n\n')
 
     # Check WiresAccess.log file
     # if os.path.isfile(LOG_PATH+"WiresAccess.log"):
